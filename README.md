@@ -1,4 +1,4 @@
-Farm Work Logger
+Farm Work Logger:
 A modern mobile application for tractor operators to log and manage field activities with ease.
 
 Key Features
