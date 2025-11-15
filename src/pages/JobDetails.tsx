@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const JobDetails = () => {
@@ -27,68 +27,82 @@ const JobDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 p-6">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-8 pt-4">
+      <div className="flex items-center gap-4 mb-10 pt-6 animate-fade-in">
         <Button
           variant="ghost"
           size="icon"
           onClick={() => navigate(-1)}
-          className="touch-target"
+          className="touch-target rounded-2xl hover:bg-primary/10 hover:scale-110 transition-all"
         >
           <ArrowLeft className="w-6 h-6" />
         </Button>
-        <h1 className="text-2xl font-bold text-foreground">
+        <h1 className="text-3xl font-bold text-foreground">
           Job Details
         </h1>
       </div>
 
       {/* Selected Job Type Display */}
-      <Card className="p-6 mb-6 job-card border-primary/30 bg-primary/5">
+      <Card className="glass-card p-7 mb-8 border-primary/30 animate-scale-in">
         <div className="text-center">
-          <p className="text-sm text-muted-foreground mb-1">Job Type</p>
-          <p className="text-2xl font-bold text-primary">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wide">Selected Task</p>
+            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
+          </div>
+          <p className="text-3xl font-bold bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent">
             {jobTypeNames[jobType]}
           </p>
         </div>
       </Card>
 
-      {/* Form */}
-      <div className="space-y-6">
+      {/* Form with modern styling */}
+      <div className="space-y-7 animate-slide-up" style={{ animationDelay: "0.1s" }}>
         <div className="space-y-3">
-          <Label htmlFor="fieldName" className="text-lg font-semibold">
-            Field Name *
+          <Label htmlFor="fieldName" className="text-lg font-bold text-foreground flex items-center gap-2">
+            Field Name
+            <span className="text-primary">*</span>
           </Label>
           <Input
             id="fieldName"
             value={fieldName}
             onChange={(e) => setFieldName(e.target.value)}
             placeholder="e.g., North Field"
-            className="h-14 text-lg rounded-xl"
+            className="h-16 text-lg rounded-2xl glass-card border-border focus:border-primary focus:ring-2 focus:ring-primary/20 font-medium"
           />
         </div>
 
         <div className="space-y-3">
-          <Label htmlFor="notes" className="text-lg font-semibold">
-            Notes (Optional)
+          <Label htmlFor="notes" className="text-lg font-bold text-foreground">
+            Notes <span className="text-sm text-muted-foreground font-normal">(Optional)</span>
           </Label>
           <Textarea
             id="notes"
             placeholder="Add any additional details..."
-            className="min-h-[120px] text-lg rounded-xl resize-none"
+            className="min-h-[140px] text-lg rounded-2xl glass-card border-border focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none font-medium"
           />
         </div>
       </div>
 
       {/* Start Button */}
-      <div className="mt-12">
+      <div className="mt-12 animate-scale-in" style={{ animationDelay: "0.2s" }}>
         <Button
           onClick={handleStartJob}
           disabled={!fieldName.trim()}
           size="lg"
-          className="w-full h-16 text-xl font-bold bg-active hover:bg-active/90 text-active-foreground rounded-2xl disabled:opacity-50 touch-target"
+          className={`
+            w-full h-16 text-xl font-bold rounded-3xl touch-target
+            transition-all duration-300 relative overflow-hidden group
+            ${fieldName.trim()
+              ? 'gradient-primary hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-2xl glow-effect' 
+              : 'bg-muted text-muted-foreground cursor-not-allowed'
+            }
+          `}
         >
-          Start Job
+          {fieldName.trim() && (
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-light/0 via-white/20 to-primary-light/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+          )}
+          <span className="relative">Start Job</span>
         </Button>
       </div>
     </div>

@@ -8,49 +8,65 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Agricultural earthy color palette */
-    --background: 40 20% 97%;
-    --foreground: 30 15% 20%;
+    /* Modern agricultural palette with tech aesthetic */
+    --background: 145 30% 97%;
+    --foreground: 145 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 15% 20%;
+    --card-foreground: 145 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 30 15% 20%;
+    --popover-foreground: 145 20% 15%;
 
-    /* Primary: Deep agricultural green */
-    --primary: 142 55% 35%;
+    /* Primary: Vibrant tech green */
+    --primary: 145 65% 45%;
     --primary-foreground: 0 0% 100%;
+    --primary-light: 145 65% 55%;
+    --primary-dark: 145 65% 35%;
 
-    /* Secondary: Warm earth brown */
-    --secondary: 30 25% 88%;
-    --secondary-foreground: 30 15% 25%;
+    /* Secondary: Soft neutral */
+    --secondary: 145 15% 92%;
+    --secondary-foreground: 145 20% 20%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 30 10% 50%;
+    --muted: 145 15% 94%;
+    --muted-foreground: 145 10% 45%;
 
-    /* Accent: Active amber/orange for CTAs */
-    --accent: 38 92% 50%;
-    --accent-foreground: 30 15% 15%;
+    /* Accent: Electric amber for energy */
+    --accent: 35 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 35 95% 65%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 90%;
-    --ring: 142 55% 35%;
+    --border: 145 20% 88%;
+    --input: 145 15% 95%;
+    --ring: 145 65% 45%;
 
-    --radius: 1rem;
+    --radius: 1.25rem;
     
-    /* Custom tokens for job status */
-    --active: 142 65% 45%;
+    /* Status colors with gradient support */
+    --active: 145 70% 48%;
     --active-foreground: 0 0% 100%;
+    --active-glow: 145 70% 55%;
     
-    --paused: 38 92% 50%;
-    --paused-foreground: 30 15% 15%;
+    --paused: 35 95% 55%;
+    --paused-foreground: 0 0% 100%;
     
-    --success: 142 70% 40%;
+    --success: 145 75% 42%;
     --success-foreground: 0 0% 100%;
+    --success-glow: 145 75% 52%;
+    
+    /* Modern gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(145, 65%, 45%) 0%, hsl(145, 70%, 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35, 95%, 55%) 0%, hsl(35, 95%, 65%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(145, 75%, 42%) 0%, hsl(145, 75%, 52%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 32px rgba(52, 211, 153, 0.25);
 
     --sidebar-background: 0 0% 98%;
 
@@ -70,42 +86,56 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 30 20% 12%;
-    --foreground: 40 20% 95%;
+    --background: 145 25% 8%;
+    --foreground: 145 15% 92%;
 
-    --card: 30 20% 15%;
-    --card-foreground: 40 20% 95%;
+    --card: 145 20% 12%;
+    --card-foreground: 145 15% 92%;
 
-    --popover: 30 20% 15%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 145 20% 12%;
+    --popover-foreground: 145 15% 92%;
 
-    --primary: 142 55% 45%;
+    --primary: 145 70% 50%;
     --primary-foreground: 0 0% 100%;
+    --primary-light: 145 70% 60%;
+    --primary-dark: 145 70% 40%;
 
-    --secondary: 30 20% 20%;
-    --secondary-foreground: 40 20% 90%;
+    --secondary: 145 15% 18%;
+    --secondary-foreground: 145 10% 85%;
 
-    --muted: 30 15% 22%;
-    --muted-foreground: 30 10% 60%;
+    --muted: 145 15% 16%;
+    --muted-foreground: 145 10% 55%;
 
-    --accent: 38 92% 55%;
+    --accent: 35 95% 58%;
     --accent-foreground: 0 0% 100%;
+    --accent-light: 35 95% 68%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 142 55% 45%;
+    --border: 145 20% 22%;
+    --input: 145 15% 18%;
+    --ring: 145 70% 50%;
     
-    --active: 142 65% 45%;
+    --active: 145 75% 50%;
     --active-foreground: 0 0% 100%;
+    --active-glow: 145 75% 60%;
     
-    --paused: 38 92% 50%;
+    --paused: 35 95% 58%;
     --paused-foreground: 0 0% 100%;
     
-    --success: 142 70% 40%;
+    --success: 145 80% 45%;
     --success-foreground: 0 0% 100%;
+    --success-glow: 145 80% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(145, 70%, 50%) 0%, hsl(145, 75%, 60%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35, 95%, 58%) 0%, hsl(35, 95%, 68%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(145, 80%, 45%) 0%, hsl(145, 80%, 55%) 100%);
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 32px rgba(52, 211, 153, 0.4);
   }
 }
 
@@ -115,7 +145,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 16px;
   }
   
@@ -126,7 +157,7 @@ All colors MUST be HSL.
   
   /* Smooth transitions */
   * {
-    @apply transition-colors duration-200;
+    @apply transition-all duration-300 ease-out;
   }
 }
 
@@ -136,7 +167,72 @@ All colors MUST be HSL.
     @apply min-h-[60px] min-w-[60px];
   }
   
-  .job-card {
-    @apply rounded-2xl shadow-md border-2;
+  .glass-card {
+    @apply rounded-3xl backdrop-blur-xl bg-white/80 border border-white/20;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  .dark .glass-card {
+    @apply bg-card/60 border-white/10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 32px rgba(52, 211, 153, 0.3);
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
